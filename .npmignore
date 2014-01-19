@@ -1,0 +1,9 @@
+*.coffee
+*.html
+.DS_Store
+.editorconfig
+.git*
+.npmignore
+Gruntfile.*
+bower.json
+test/
