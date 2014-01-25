@@ -42,5 +42,6 @@ module.exports = (grunt) ->
   ]
   grunt.loadNpmTasks p for p in packages
 
-  grunt.registerTask 'default', ['coffee', 'uglify']
+  grunt.registerTask 'default', ['build']
+  grunt.registerTask 'build', ['coffee', 'uglify']
   grunt.registerTask 'test', ['mochaTest']
