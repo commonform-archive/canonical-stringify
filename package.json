@@ -12,6 +12,7 @@
   },
   "scripts": {
     "prepublish": "grunt build",
+	"doc": "docco -o . canonical-stringify.coffee && mv canonical-stringify.html index.html",
     "test": "grunt test"
   },
   "devDependencies": {
