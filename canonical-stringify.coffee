@@ -112,4 +112,4 @@ stringify = (value, replacer, space) ->
 if module? && module.exports?
   module.exports = stringify
 else
-  this.canonicalStringify = stringify
+  window.canonicalStringify = stringify

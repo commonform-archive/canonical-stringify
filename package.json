@@ -11,18 +11,16 @@
     "url": "git://github.com/commonform/canonical-stringify.git"
   },
   "scripts": {
-    "prepublish": "grunt build",
-	"doc": "docco -o . canonical-stringify.coffee && mv canonical-stringify.html index.html",
-    "test": "grunt test"
+    "build": "./node_modules/coffee-script/bin/coffee -m -c canonical-stringify.coffee && ./node_modules/uglify-js/bin/uglifyjs canonical-stringify.js -c -m --in-source-map canonical-stringify.map --source-map canonical-stringify.min.map -o canonical-stringify.min.js",
+    "doc": "./node_modules/docco/bin/docco -o . canonical-stringify.coffee && mv canonical-stringify.html index.html",
+    "pretest": "./node_modules/coffee-script/bin/coffee -c test",
+    "test": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3",
-    "grunt": "~0.4.2",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-coffee": "~0.8.2",
-    "grunt-contrib-uglify": "~0.3.0",
-    "mocha": "~1.17.0",
+    "coffee-script": "~1.7.1",
     "should": "~3.0.1",
-    "grunt-mocha-test": "~0.8.2"
+    "docco": "~0.6.3",
+    "mocha-phantomjs": "~3.3.2",
+    "uglify-js": "~2.4.12"
   }
 }
