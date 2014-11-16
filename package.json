@@ -24,8 +24,9 @@
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
-    "should": "~3.0.1",
     "docco": "~0.6.3",
-    "mocha-phantomjs": "~3.3.2"
+    "mocha-phantomjs": "~3.3.2",
+    "phantomjs": "^1.9.12",
+    "should": "~3.0.1"
   }
 }
