@@ -2,8 +2,13 @@
   "name": "canonical-stringify",
   "description": "JSON.stringify that sorts Object keys",
   "version": "0.0.1-alpha.1",
-  "maintainer": "Kyle Mitchell <kyle@kemitchell.com>",
-  "license": "MIT",
+  "maintainer": "Kyle Mitchell <kyle@kemitchell.com> (http://kemitchell.com/)",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://raw.github.com/commonform/canonical-stringify/master/LICENSE"
+    }
+  ],
   "main": "canonical-stringify.js",
   "homepage": "https://github.com/commonform/canonical-stringify",
   "repository": {
@@ -11,16 +16,16 @@
     "url": "git://github.com/commonform/canonical-stringify.git"
   },
   "scripts": {
-    "build": "./node_modules/coffee-script/bin/coffee -m -c canonical-stringify.coffee && ./node_modules/uglify-js/bin/uglifyjs canonical-stringify.js -c -m --in-source-map canonical-stringify.map --source-map canonical-stringify.min.map -o canonical-stringify.min.js",
-    "doc": "./node_modules/docco/bin/docco -o . canonical-stringify.coffee && mv canonical-stringify.html index.html",
-    "pretest": "./node_modules/coffee-script/bin/coffee -c test",
-    "test": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html"
+    "build": "coffee -c canonical-stringify.coffee",
+    "prepublish": "npm run build",
+    "doc": "docco -o doc canonical-stringify.coffee",
+    "pretest": "coffee -c test",
+    "test": "mocha-phantomjs test/index.html"
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
     "should": "~3.0.1",
     "docco": "~0.6.3",
-    "mocha-phantomjs": "~3.3.2",
-    "uglify-js": "~2.4.12"
+    "mocha-phantomjs": "~3.3.2"
   }
 }

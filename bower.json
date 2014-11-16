@@ -7,12 +7,12 @@
     "type": "git",
     "url": "git://github.com/commonform/canonical-stringify.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "ignore": [
     "**/.*",
     "*.json",
     "*.md",
-    "Gruntfile.*",
-    "test"
+    "test",
+    "doc"
   ]
 }
